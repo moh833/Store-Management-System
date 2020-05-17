@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-9">
+    <div class="content-section">
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <legend class="border-bottom mb-4">Search for Item</legend>
+          <div class="row">
+          <div class="form-group col-6">
+            {{ form.search.label(class="form-control-label") }}
+            {% if form.search.errors %}
+              {{ form.search(class="form-control form-control is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.search.errors %}
+                <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.search(class="form-control form-control") }}
+            {% endif %}
+          </div>
+          </div>
+        </fieldset>
+        <div class="form-group">
+          {{ form.submit(class="btn btn-outline-dark") }}
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+{% endblock %}

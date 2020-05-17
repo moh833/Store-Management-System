@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center">
+<div class="col-12">
+	<div class="content-section">
+
+    <legend class="mb-4">Debts Handling</legend>
+
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Customer</th>
+                <th scope="col">Item</th>
+                <th scope="col">Paid Price</th>
+                <th scope="col">Sold Quantity</th>
+                <th scope="col">Sale</th>
+                <th scope="col">Debt</th>
+                <th scope="col">Time</th>
+                <th scope="col">#</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for sold_item in sold_items %}
+              <tr>
+                <th scope="row">{{ sold_item.customer }}</th>
+                <td>{{ sold_item.item }}</td>
+                <td>{{ sold_item.paid_price }}</td>
+                <td>{{ sold_item.sold_quantity }}</td>
+                <td>{{ sold_item.sale }}</td>
+                <td>{{ sold_item.debt }}</td>
+                <td>{{ sold_item.time }}</td>
+                <td><a class="btn btn-outline-dark" href="{{ url_for('debt', id=sold_item.id) }}">Pay</a></td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+
+	</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% extends 'layout.html' %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-12 col-lg-9">
+    <div class="content-section">
+        <legend class="border-bottom mb-4">Item's Info</legend>
+
+    <div class="row">
+
+        <table class="table table-striped col-sm-6">
+            <tbody>
+              <tr>
+                <td><label class="font-weight-bold">Item </label></td>
+                <td>{{ item.name }}</td>
+              </tr>
+              <tr>
+                <td><label class="font-weight-bold">Country </label></td>
+                <td>{{ item.country }}</td>
+              </tr>
+              <tr>
+                <td><label class="font-weight-bold">Family </label></td>
+                <td>{{ item.family }}</td>
+              </tr>
+              <tr>
+                <td><label class="font-weight-bold">Quantity </label></td>
+                <td>{{ item.current_quantity }}</td>
+              </tr>
+              <tr>
+                <td><label class="font-weight-bold">Selling Price </label></td>
+                <td>{{ item.selling_price }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-striped col-sm-6">
+            <tbody>
+              <tr>
+                <td><label class="font-weight-bold">Company </label></td>
+                <td>{{ item.company }}</td>
+              </tr>
+              <tr>
+                <td><label class="font-weight-bold">Distributer </label></td>
+                <td>{{ item.distributer }}</td>
+              </tr>
+              <tr>
+                <td><label class="font-weight-bold">Place </label></td>
+                <td>{{ item.place }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div><!-- row -->
+
+
+
+        <legend class="border-bottom mb-4">Sell Item</legend>
+        <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <fieldset class="form-group">
+                      <div class="row">
+                            <div class="form-group col-6">
+                                {{ form.quantity.label(class="form-control-label") }}
+                                {% if form.quantity.errors %}
+                                    {{ form.quantity(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                            {% for error in form.quantity.errors %}
+                                            <span>{{ error }}</span>
+                                            {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.quantity(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group col-6">
+                                {{ form.paid_price.label(class="form-control-label") }}
+                                {% if form.paid_price.errors %}
+                                    {{ form.paid_price(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                                {% for error in form.paid_price.errors %}
+                                                <span>{{ error }}</span>
+                                                {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.paid_price(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group col-6">
+                                {{ form.sale.label(class="form-control-label") }}
+                                {% if form.sale.errors %}
+                                    {{ form.sale(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                                {% for error in form.sale.errors %}
+                                                <span>{{ error }}</span>
+                                                {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.sale(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group col-6">
+                                {{ form.customer.label(class="form-control-label") }}
+                                {% if form.customer.errors %}
+                                    {{ form.customer(class="form-control form-control is-invalid") }}
+                                    <div class="invalid-feedback">
+                                                {% for error in form.customer.errors %}
+                                                <span>{{ error }}</span>
+                                                {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.customer(class="form-control form-control") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group col-12">
+                                    {{ form.submit(class="btn btn-outline-dark w-25") }}
+                            </div>
+                      </div><!-- row -->
+                </fieldset>
+        </form>
+
+
+
+    </div>
+  </div>
+</div>
+{% endblock %}

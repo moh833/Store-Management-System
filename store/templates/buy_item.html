@@ -1,0 +1,228 @@
+{% extends 'layout.html' %}
+{% block content %} 
+<div class="row justify-content-center">
+<div class="col-12 col-lg-9">
+	<div class="content-section">
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset class="form-group">
+                <legend class="border-bottom mb-4">Buy Item</legend>
+                <div class="row">
+				<div class="form-group col-6">
+					{{ form.name.label(class="form-control-label") }}
+					{% if form.name.errors %}
+						{{ form.name(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.name.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.name(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-3 other">
+					{{ form.other_name.label(class="form-control-label") }}
+					{% if form.other_name.errors %}
+						{{ form.other_name(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.other_name.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.other_name(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-6">
+					{{ form.company.label(class="form-control-label") }}
+					{% if form.company.errors %}
+						{{ form.company(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.company.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.company(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-3 other">
+					{{ form.other_company.label(class="form-control-label") }}
+					{% if form.other_company.errors %}
+						{{ form.other_company(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.other_company.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.other_company(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-6">
+					{{ form.country.label(class="form-control-label") }}
+					{% if form.country.errors %}
+						{{ form.country(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.country.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.country(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-3 other">
+					{{ form.other_country.label(class="form-control-label") }}
+					{% if form.other_country.errors %}
+						{{ form.other_country(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.other_country.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.other_country(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-6">
+					{{ form.distributer.label(class="form-control-label") }}
+					{% if form.distributer.errors %}
+						{{ form.distributer(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.distributer.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.distributer(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-3 other">
+					{{ form.other_distributer.label(class="form-control-label") }}
+					{% if form.other_distributer.errors %}
+						{{ form.other_distributer(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.other_distributer.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.other_distributer(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-6">
+					{{ form.family.label(class="form-control-label") }}
+					{% if form.family.errors %}
+						{{ form.family(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.family.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.family(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-3 other">
+					{{ form.other_family.label(class="form-control-label") }}
+					{% if form.other_family.errors %}
+						{{ form.other_family(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.other_family.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.other_family(class="form-control form-control") }}
+					{% endif %}
+                </div>
+                <div class="form-group col-6">
+                    {{ form.quantity.label(class="form-control-label") }}
+                    {% if form.quantity.errors %}
+                        {{ form.quantity(class="form-control form-control is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.quantity.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.quantity(class="form-control form-control") }}
+                    {% endif %}
+                </div>
+				<div class="form-group col-6">
+					{{ form.buying_price.label(class="form-control-label") }}
+					{% if form.buying_price.errors %}
+						{{ form.buying_price(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.buying_price.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.buying_price(class="form-control form-control") }}
+					{% endif %}
+				</div>
+				<div class="form-group col-6">
+					{{ form.selling_price.label(class="form-control-label") }}
+					{% if form.selling_price.errors %}
+						{{ form.selling_price(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.selling_price.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.selling_price(class="form-control form-control") }}
+					{% endif %}
+                </div>
+				<div class="form-group col-6">
+                    {{ form.place.label(class="form-control-label") }}
+                    {% if form.place.errors %}
+                        {{ form.place(class="form-control form-control is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.place.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.place(class="form-control form-control") }}
+                    {% endif %}
+				</div>
+				<div class="form-group col-3 other">
+                    {{ form.other_place.label(class="form-control-label") }}
+                    {% if form.other_place.errors %}
+                        {{ form.other_place(class="form-control form-control is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.other_place.errors %}
+                            <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.other_place(class="form-control form-control") }}
+                    {% endif %}
+				</div>
+				<div class="form-group col-6">
+					{{ form.risk_quantity.label(class="form-control-label") }}
+					{% if form.risk_quantity.errors %}
+						{{ form.risk_quantity(class="form-control form-control is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.risk_quantity.errors %}
+							<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.risk_quantity(class="form-control form-control") }}
+					{% endif %}
+                </div>
+                </div>
+			</fieldset>
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-dark") }}
+			</div>
+		</form>
+	</div>
+</div>
+</div>
+{% endblock %}
