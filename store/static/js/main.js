@@ -63,34 +63,19 @@ $(function(){
             $('#other_distributer').removeAttr('required');
         }
     });
-    $("#car_family").change(function(){
+    $("#family").change(function(){
         if ($(this).val() == "other")
         {
             $(this).parent().addClass("col-3");
             $(this).parent().removeClass("col-6");
-            $('#other_car_family').parent().removeClass("other");
-            $('#other_car_family').attr('required', '');
+            $('#other_family').parent().removeClass("other");
+            $('#other_family').attr('required', '');
         }
         else {
             $(this).parent().addClass("col-6");
             $(this).parent().removeClass("col-3");
-            $('#other_car_family').parent().addClass("other");
-            $('#other_car_family').removeAttr('required');
-        }
-    });
-    $("#car_name").change(function(){
-        if ($(this).val() == "other")
-        {
-            $(this).parent().addClass("col-3");
-            $(this).parent().removeClass("col-6");
-            $('#other_car_name').parent().removeClass("other");
-            $('#other_car_name').attr('required', '');
-        }
-        else {
-            $(this).parent().addClass("col-6");
-            $(this).parent().removeClass("col-3");
-            $('#other_car_name').parent().addClass("other");
-            $('#other_car_name').removeAttr('required');
+            $('#other_family').parent().addClass("other");
+            $('#other_family').removeAttr('required');
         }
     });
     $("#place").change(function(){
@@ -110,10 +95,10 @@ $(function(){
     });
 
 
-    // $("#quantity").change(function(){
-    //     var total = Number($(this).val()) * 5;
-    //     $('#paid_price').val(total);
-    // });
+    $("#quantity").change(function(){
+        var total = Number($(this).val()) * Number($('#get_price').text());
+        $('#paid_price').val(total);
+    });
 
 
 });

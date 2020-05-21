@@ -40,7 +40,7 @@ class SoldItemForm(FlaskForm):
 	customer = StringField('Customer', validators=[Length(max=100)])
 
 	submit = SubmitField('Sell')
-# ['name', 'company', 'country', 'distributer', 'car_family', 'car_name', 'place']
+
 class BoughtItemForm(FlaskForm):
 	name = SelectField('Item\'s Name', validators=[DataRequired()], render_kw={'autofocus': 'true'})
 	company = SelectField('Company', validators=[DataRequired()])
@@ -139,19 +139,6 @@ class AddEmpForm(FlaskForm):
 			raise ValidationError('Please enter a valid phone Number.')
 		# if len(phone.data) != 11 or phone.data[:2] != '01':
 			# raise ValidationError('Please enter a valid phone Number.')
-
-
-# class AddItemForm(FlaskForm):
-# 	fname = StringField('First Name', validators=[DataRequired(), Length(max=50)], render_kw={'autofocus': 'true'})
-# 	lname = StringField('Last Name', validators=[DataRequired(), Length(max=50)])
-# 	email = StringField('Email', validators=[DataRequired(), Email(), Length(max=100)])
-# 	phone = StringField('Phone', validators=[DataRequired(), Length(max=15)])
-# 	role = SelectField('Role', validators=[DataRequired()], choices = choices.get('role'))
-
-# 	password = PasswordField('Password', validators=[DataRequired(), Length(max=50)])
-# 	confirm_password = PasswordField('Confirm Password', validators=[DataRequired(), Length(max=50), EqualTo('password', message='Password doesn\'t match.')])
-# 	submit = SubmitField('Add')
-
 
 
 

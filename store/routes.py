@@ -120,7 +120,7 @@ def item_info(id):
 		db.session.add(sold_item)
 		db.session.commit()
 		flash(f'{sold_item.sold_quantity} of {item.name} has been\
-		 sold by {sold_item.paid_price}', 'success')
+		 sold', 'success')
 		return redirect(url_for('home'))
 	elif request.method == 'GET':
 		form.quantity.data = 1
@@ -138,7 +138,7 @@ def buy_item():
 	form.company.choices = choices_from_file('Company', 'company.txt')
 	form.country.choices = choices_from_file('Country', 'country.txt')
 	form.distributer.choices = choices_from_file('Distributer', 'distributer.txt')
-	form.family.choices = choices_from_file('Car Family', 'family.txt')
+	form.family.choices = choices_from_file('Family', 'family.txt')
 	form.place.choices = choices_from_file('Place', 'place.txt')
 	if form.validate_on_submit():
 		bought_item = BoughtItem()
@@ -204,9 +204,9 @@ def buy_item():
 		db.session.commit()
 
 
-		flash(f'{bought_item.bought_quantity} of {main_item.name} has been added\
-			for {bought_item.buying_price} each, You now have\
-				{main_item.current_quantity} of {main_item.name}', 'success')
+		flash(f"{bought_item.bought_quantity} of {main_item.name} has been added\
+			for {bought_item.buying_price} each, You have now\
+				{main_item.current_quantity} of {main_item.name}'s", 'success')
 		return redirect(url_for('home'))
 	elif request.method == 'GET':
 		pass
